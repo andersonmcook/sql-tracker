@@ -3,6 +3,9 @@
 const express = require('express');
 const router = express.Router();
 
+const sqlite3 = require('sqlite3');
+const db = new sqlite3.Database('./db/sql-weight-tracker.db');
+
 // GET home is a login?
 router.get('/', (req, res) => {
   // res.render('form');
@@ -29,7 +32,10 @@ router.get('/form/:id', (req, res) => {
 
 // POST the form
 router.post('/form', (req, res) => {
-  res.send('you have posted some info');
+  db.run(`
+    INSERT into entryLog()
+    `)
+  res.send(req.body);
   //res.redirect(`/chart/${uid of some sort}`);
 });
 
