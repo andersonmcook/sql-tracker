@@ -1,0 +1,13 @@
+extends header
+
+block #content
+h2 Enter Username and Password to Begin!
+form(method='POST' action='/login')
+  .input-group
+    label(for='user')
+    input#usern(type='text' name='user' placeholder='Username' required)
+  .input-group
+    label(for='pass')
+    input#passw(type='password' name='pass' placeholder='Password' required)
+  .input-group
+    input(type='submit' value='Submit')
