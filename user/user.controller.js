@@ -7,6 +7,7 @@ const plotly = require('plotly')(PLOTLY_USERNAME, PLOTLY_API_KEY);
 module.exports = {
 
   chart (req, res) {
+    // dummy plot
     const trace1 = {
       x: [1, 2, 3, 4],
       y: [10, 15, 13, 17],
