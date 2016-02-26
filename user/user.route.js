@@ -15,6 +15,12 @@ router.post('/', (req, res) => {
   //res.redirect(`/form/${res.uid}`) ?
 });
 
+//Catch login form info:
+router.post('/login', (req, res) => {
+  console.log(req.body);
+  res.send('you were redirected after logging in');
+})
+
 // GET form to input day/steps/weight
 router.get('/form/:id', (req, res) => {
   //req.params.id

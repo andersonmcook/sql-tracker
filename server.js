@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const path = require('path');
 const userRoutes = require('./user/user.route')
+const sqlite3 = require('sqlite3');
+const db = new sqlite3.Database('./db/sql-weight-tracker.db');
 
 app.set('view engine', 'jade');
 

@@ -4,6 +4,10 @@ block #content
   h2 Enter Username and Password to Begin!
   form(method='POST' action='/login')
     .input-group
+      input(type='text' name='firstName' placeholder='First Name' required)
+    .input-group
+      input(type='text' name='lastName' placeholder='Last Name' required)
+    .input-group
       input(type='email' name='email' placeholder='Email' required)
     .input-group
       input(type='password' name='pass' placeholder='Password' required)
