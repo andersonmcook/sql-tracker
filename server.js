@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // GET home is a login?
 app.get('/', (req, res) => {
-  res.send('form');
+  res.render('form');
 });
 
 // POST login info
