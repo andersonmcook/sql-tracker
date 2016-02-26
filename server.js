@@ -9,9 +9,6 @@ const userRoutes = require('./user/user.route')
 
 app.set('view engine', 'jade');
 
-//Generate paths to static assets in public folder:
-app.use(express.static('public'));
-
 //Compile Sass to CSS:
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
@@ -19,6 +16,9 @@ app.use(require('node-sass-middleware')({
   indentedSyntax: true,
   sourceMap: true
 }));
+
+//Generate paths to static assets in public folder:
+app.use(express.static('public'));
 
 // Use body parser
 app.use(bodyParser.urlencoded({extended: false}));
