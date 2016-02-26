@@ -4,10 +4,22 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
+const path = require('path');
 
 app.set('view engine', 'jade');
-app.use(bodyParser.urlencoded({extended: false}));
 
+//Generate paths to static assets in public folder:
+app.use(express.static('public'));
+
+//Compile Sass to CSS:
+app.use(require('node-sass-middleware')({
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
+  indentedSyntax: true,
+  sourceMap: true
+}));
+
+app.use(bodyParser.urlencoded({extended: false}));
 
 // GET home is a login?
 app.get('/', (req, res) => {
