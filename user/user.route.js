@@ -6,7 +6,7 @@ const router = express.Router();
 // GET home is a login?
 router.get('/', (req, res) => {
   // res.render('form');
-  res.send('login');
+  res.render('login');
 });
 
 // POST login info
@@ -29,7 +29,7 @@ router.post('/form', (req, res) => {
 
 // GET chart
 router.get('/chart/:id', (req, res) => {
-  res.send('a chart');
+  res.render('../views/chart');
 });
 
 module.exports = router;
