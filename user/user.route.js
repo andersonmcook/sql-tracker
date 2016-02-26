@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+const userCtrl = require('./user.controller');
 
 // GET home is a login?
 router.get('/', (req, res) => {
@@ -28,8 +29,6 @@ router.post('/form', (req, res) => {
 });
 
 // GET chart
-router.get('/chart/:id', (req, res) => {
-  res.render('../views/chart');
-});
+router.get('/chart/:id', userCtrl.chart);
 
 module.exports = router;
